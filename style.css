@@ -5,13 +5,11 @@
     margin: 0 ;
     padding: 0 ;
 }
-
 .container{
     width: 336px;
     height: 100%;
     margin: 100px auto;
     border: 1px solid #C4C4C4  ;
-    
 }
 .yellow{
     width: 334px;
@@ -121,30 +119,11 @@ input, .newInput{
     transition: transform .7s ease-in-out;
     background-color: #C4C4C4
 }
-.newDeleteButton:hover {
-    transform: rotate(360deg);
-}
-.plus{
-    transition: transform .7s ease-in-out;
-  }
-.p:hover {
-    transform: rotate(360deg);
-}
-.X{ 
-    width: 10px;
-    height: 10px;   
-}
-.newInput:hover {
-    border: 5px solid #FFDC40;
-    border-radius: 10px;  
-}
-.input:hover {
-    border: 5px solid #FFDC40;
-}
-.deleteButton:hover {
-    transform: rotate(360deg);
-}
-.sortButtonz{
-    margin-left: 281px;
-    display: none;
-}
+.newDeleteButton:hover { transform: rotate(360deg); }
+.plus { transition: transform .7s ease-in-out; }
+.p:hover { transform: rotate(360deg); }
+.X { width: 10px; height: 10px; }
+.newInput:hover { border: 5px solid #FFDC40; border-radius: 10px; }
+.input:hover { border: 5px solid #FFDC40; }
+.deleteButton:hover { transform: rotate(360deg); }
+.sortButtonz { margin-left: 281px; display: none; }

@@ -9,14 +9,11 @@ let input = document.querySelector('.input') ;
 let plus = document.querySelector('.plus') ;
 let sortButtonz = document.querySelector('.sortButtonz')
 
-
-
 // При нажатие кнопки "buttonAdd" добавляется новая пустая запись.
 function Dobavit(){
     let inputs = document.querySelectorAll('.input')
     let lastElem = inputs[inputs.length-1]
     if(lastElem.value.length!=0){
-        
     let newInputDiv = document.createElement('li') ;
     newInputDiv.classList.add('inputDiv')
     inputDivs.append(newInputDiv);
@@ -45,10 +42,7 @@ function Dobavit(){
     item.addEventListener('mouseout', function(){
     item.style.background = 'none' ;
     item.style.background = '#C4C4C4' ;
-})})
-
-
-}
+})})}
     
  // Если последняя запись пустая, то новая не добавляется и меняется цвет границы последней записи  
 else{ 
@@ -62,25 +56,19 @@ setTimeout(redBorder,100) ;
 setTimeout(redOriginalBorder,1000) ;
     function hovz(){
         lastElem.style.border='5px solid #FFDC40'}
-
     lastElem.addEventListener('mouseover', hovz)
     function hovd(){
         lastElem.style.border='none'}
-        
     lastElem.addEventListener('mouseout', hovd)
-    
 }
-
 
 let massiv = [];
 let  inputlar = document.querySelectorAll('.input')
 
 function value(){ 
-
 for(let i =0;i< inputlar.length;i++){   
         massiv[i]=inputlar[i].value 
 } 
- 
 massiv.sort() 
  
 for(let i =0;i< massiv.length;i++){ 
@@ -91,25 +79,18 @@ for(let i =0;i< massiv.length;i++){
 }
 sortButton.addEventListener('click', value) 
 
-
 function ss(){ 
-
 for(let i =0;i< inputlar.length;i++){   
         massiv[i]=inputlar[i].value 
 } 
 
-
 massiv.sort((a,b) =>{
     if(a<b){
         return 1;
-
     } 
     if (a>b){
         return-1
-    }
-}
-
-)
+    }})
  
 for(let i =0;i< massiv.length;i++){ 
     inputlar[i].value =  massiv[i] 
@@ -119,10 +100,8 @@ for(let i =0;i< massiv.length;i++){
 } 
 sortButtonz.addEventListener('click', ss)  
 }
- 
 buttonAdd.addEventListener('click', Dobavit) ;
  
-
 // Когда курсор оказывается над кнопкой "buttonAdd" меняется стиль этой кнопки. 
 function hover(){
     rightButtonAdd.style.color= '#9953F1';
@@ -135,10 +114,7 @@ function hover(){
     leftButtonAdd.style.background= 'rgba(0,0,0,0)' ;
     plus.style.transform= 'rotate(360deg)' 
 }
-
 buttonAdd.addEventListener('mouseover', hover) ;
-
-
 
 // Когда курсор мыши выходит за пределы кнопки "buttonAdd" возвращается старая стиль этой кнопки. 
 function outhover(){
@@ -152,34 +128,23 @@ function outhover(){
     leftButtonAdd.style.background= '#9953F1' ; 
     plus.style.transform= 'none'
 }
-
 buttonAdd.addEventListener('mouseout', outhover) ;
-
-
 
 // При нажатие "deleteButton", удаляется первая запись. ("deleteButton" это кнопка удаления первой записи которая  есть в начальном состоянии списка.)
 function remove(){
     if(inputDivs.childElementCount>1){ inputDiv.remove()} ;
 }
-
 deleteButton.addEventListener('click',remove) ;
-
-
-
 
 //Когда курсор оказывается над кнопкой "deleteButton", меняется её стиль. ("deleteButton" это кнопка удаления первой записи которая  есть в начальном состоянии списка.)
 function hoverr(){
     deleteButton.style.background = '#833AE0' ;  
 }
-
 deleteButton.addEventListener('mouseover', hoverr);
-
-
 
 //курсор мыши выходит за пределы кнопки "deleteButton", возвращается её  старая стиль. ("deleteButton" это кнопка удаления первой записи которая  есть в начальном состоянии списка.)
 function outhoverr(){
     deleteButton.style.background = 'none' ;
     deleteButton.style.background = '#C4C4C4' ;
 }
-
 deleteButton.addEventListener('mouseout', outhoverr);
