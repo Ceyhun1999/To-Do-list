@@ -16,6 +16,5 @@ Layihə fərdi şəkildə həyata keçirilir. Layihə kodu GitHub-da ayrıca rep
 Çeklist
 
 ![image](https://user-images.githubusercontent.com/100986302/189364180-0614d029-4e5a-4e66-9f8b-dbf713894dea.png)
-
 https://ceyhun1999.github.io/To-Do-list/
 
