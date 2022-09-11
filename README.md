@@ -1,3 +1,5 @@
+https://ceyhun1999.github.io/To-Do-list/
+
 Modul 2. Layihə "Task Tracker proqramının tərtibatı".
 Mətn formatında olan kiçik tapşırıqları qeyd etmək üçün olab Task Tracker proqramlarını hazırlayın. Proqram siyahıya tapşırıqları əlavə etmək, dəyişdirmək və silmək, həmçinin əlifba sırası ilə sıralamaq qabiliyyətini dəstəkləməlidir.
 Layouts
