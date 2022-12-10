@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="yellow"></div>
-        <div class="main">
-            <div class="toDoList">To-Do List</div>
-            <div class="sortButtonDiv"><img class="sortButton" src="./img/Group 38.png" alt="SortButton">
-                <img class="sortButtonz" src="./img/Group 90.png" alt="SortButton"></div>
-           <ul class="inputDivs">
-            <li class="inputDiv">
-                <input class="input" required>
-                <div class="deleteButton">
-                    <img class="X" src="./img/Group 52.svg "alt="">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="container__top"></div>
+            <div class="container__content">
+                <h1 class="title">To-Do List</h1>
+                <div class="btn-sort">
+                    <img class="btn-sort__down" src="img/btn-down.png" alt="Button sort">
                 </div>
-            </li>
-           </ul>
-            <div class="buttonAdd">
-                <button class="leftButtonAdd"><p class="plus">+</p></button>
-                <button class="rightButtonAdd">Добавить</button>
+                <div class="inputs" id="inputs">
+                    <div class="inputs__item draggable" draggable="true" ondragend="dragEnd(event)" ondragstart="drag(event)">
+                        <div class="btn-delete">🞡</div>
+                        <input type="text" />
+                    </div>
+                </div>
+                <div class="btn-add">
+                    <div class="btn-add__left">+</div>
+                    <div class="btn-add__right">Добавить</div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <script src="javascript.js"></script>
-</body>
+        <div id="done" ondrop="drop()" ondragover="allowDrop(event)" ></div>
+        <script src="js/javascript.js"></script>
+    </body>
 </html>
