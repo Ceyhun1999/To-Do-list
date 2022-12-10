@@ -5,7 +5,8 @@ const btnAdd = document.querySelector('.btn-add');
     btnsDelete2 = document.getElementsByClassName('btn2-delete'),
     btnSort = document.querySelector('.btn-sort__down'),
     done = document.getElementById('done'),
-    draggables = document.getElementsByClassName('draggable');
+    draggables = document.getElementsByClassName('draggable'),
+    doneHeight = done.offsetHeight;
 let flag = 1,
     flagTwo = true,
     number = 1,
@@ -13,11 +14,12 @@ let flag = 1,
     id = 1;
 
 btnAdd.addEventListener('click', createInput);
+
 btnSort.addEventListener('click', sort);
 
 function createInput() {
     (Array.from(inputItems)[Array.from(inputItems).length - 1].value.trim() == '') ? flagTwo = false : flagTwo = true;
-    if (flag < 10 && flagTwo) {
+    if (flag < 5 && flagTwo) {
         flag++;
         id++;
         number++;
@@ -27,7 +29,7 @@ function createInput() {
 
 function create() {
     let html = `<div class="inputs__item draggable" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)">
-                    <div class="btn-delete"> 🞡 </div>
+                    <div class="btn-delete cross"> 🞡 </div>
                     <input type="text" />
                 </div>`;
     inputs.insertAdjacentHTML("beforeend", html);
@@ -81,9 +83,11 @@ function allowDrop(e) {
 
 function drop(e) {
     const draggable = document.querySelector('.dragging');
-    if (draggable.querySelector('input').value.trim() != '') {
+    if (draggable.querySelector('input').value.trim() != '' && done.children.length < 10) {
         if (flag > 1) flag--;
         const btn = draggable.querySelector('.btn-delete');
+        const inp = draggable.querySelector('input');
+        inp.disabled = true;
         btn.removeEventListener('click', deleteInputFirst);
         btn.classList.remove('btn-delete');
         btn.classList.add('btn2-delete');
@@ -91,6 +95,7 @@ function drop(e) {
         done.appendChild(draggable);
         if (inputs.children.length == 0) create();
     }
+   
 };
 
 

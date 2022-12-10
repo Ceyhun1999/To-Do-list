@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 :root {
     --grey: #c4c4c4;
+    --pink: #9953f1;
+    --pink2: #833AE0;
 }
 body {
     display: flex;
@@ -81,12 +83,13 @@ input {
     cursor: pointer;
     width: 150px;
     margin: auto;
+
 }
 .btn-add__left {
     font-size: 25px;
     font-weight: bold;
     color: #fff;
-    background: #9953f1;
+    background: var(--pink);
     border-radius: 50%;
     width: 42px;
     height: 42px;
@@ -94,9 +97,11 @@ input {
     justify-content: center;
     align-items: center;
     position: absolute;
+    border: 1px solid var(--pink);
+    transition: .5s;
 }
 .btn-add__right {
-    background: #833AE0;
+    background: var(--pink2);
     display: flex;
     align-items: center;
     width: 100%;
@@ -105,12 +110,13 @@ input {
     border-radius: 70px;
     color: #fff;
     font: 14px 'Roboto', sans-serif;
+    border: 1px solid var(--pink);
+    transition: .5s;
 }
 #done {
     width: 350px;
-    height: 70px;
     padding: 10px;
-    border: 1px solid #aaaaaa;
+    border: 1px solid #aaa;
     max-width: 340px;
     width: 100%;
     min-height: 240px;
@@ -119,12 +125,29 @@ input {
     background: lime;
 }
 #done > div { margin-bottom: 10px }
-.draggable.dragging {
+#done input { background: #aaa }
+/* .draggable.dragging {
     border: #ffdc40;
     opacity: .5;
     background: red;
-}
+} */
+.cross { transition: .5s }
 
 @media only screen and (min-width: 768px) {
+    
     body { flex-direction: row }
+    .btn-add:hover .btn-add__left { transform: rotate(180deg) }
+
+    .btn-add:hover div {
+        background: #fff;
+        border: 1px solid var(--pink2);
+        color: var(--pink2);
+    }
+    .cross:hover { 
+        transform: rotate(180deg);
+        background: var(--pink);
+        color: #fff;
+    }
+    
+   
 }
