@@ -2,9 +2,7 @@ https://ceyhun1999.github.io/To-Do-list/
 
 Modul 2. Layihə "Task Tracker proqramının tərtibatı".
 Mətn formatında olan kiçik tapşırıqları qeyd etmək üçün olab Task Tracker proqramlarını hazırlayın. Proqram siyahıya tapşırıqları əlavə etmək, dəyişdirmək və silmək, həmçinin əlifba sırası ilə sıralamaq qabiliyyətini dəstəkləməlidir.
-Layouts
-Layihənin görünüşü layout - a uyğun olmalıdır.
-https://www.figma.com/file/KsxpDgPhRS3zEmuGx8qcKk/PTM2-Todo-list?node-id=0%3A1 
+
 Tələblər
 Tapşırıqlar siyahısı bir sıra qeydləri əhatə edir. 
 Hər bir giriş sahəsi klaviaturadan ixtiyari mətn sətirini yaza biləcəyiniz bir sətirlik ölçüdə yerdən ibarətdir. 
