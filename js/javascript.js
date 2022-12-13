@@ -55,6 +55,7 @@ function sort() {
             }
         };
     }
+    console.log(dataBaza);
     if (flagSort) {
         for (let i = 0; i < arrInputValue.length; i++) {
             if (arrInputValue[i].value.trim() != '') arrInputValue[i].value = dataBaza.sort()[i];
