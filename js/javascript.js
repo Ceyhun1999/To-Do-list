@@ -14,8 +14,9 @@ let flag = 1,
     id = 1;
 
 btnAdd.addEventListener('click', createInput);
-
 btnSort.addEventListener('click', sort);
+btnSort.addEventListener('mouseover', hoverEffectSortBtn);
+btnSort.addEventListener('mouseout', hoverEffectSortBtnOut);
 
 function createInput() {
     (Array.from(inputItems)[Array.from(inputItems).length - 1].value.trim() == '') ? flagTwo = false : flagTwo = true;
@@ -24,6 +25,9 @@ function createInput() {
         id++;
         number++;
         create();
+    } else {
+        Array.from(inputItems)[Array.from(inputItems).length - 1].classList.add('error');
+        setTimeout(() => Array.from(inputItems)[Array.from(inputItems).length - 1].classList.remove('error'), 500);
     }
 };
 
@@ -43,17 +47,25 @@ function sort() {
     const arrInputValue =  Array.from(inputItems);
     
     for (let i = 0; i < arrInputValue.length; i++) {
-        if (arrInputValue[i].value.trim() != '') dataBaza.push(arrInputValue[i].value.trim());
+        if (arrInputValue[i].value.trim() != '') dataBaza.push(arrInputValue[i].value.trim())
+        else {
+            if (flag > 1) {
+                arrInputValue[i].parentElement.remove();
+                flag = dataBaza.length;
+            }
+        };
     }
     if (flagSort) {
         for (let i = 0; i < arrInputValue.length; i++) {
             if (arrInputValue[i].value.trim() != '') arrInputValue[i].value = dataBaza.sort()[i];
         }
+        btnSort.src = `img/btn-up.png`
         flagSort = false;
     } else {
         for (let i = 0; i < arrInputValue.length; i++) {
             if (arrInputValue[i].value.trim() != '') arrInputValue[i].value = dataBaza.sort().reverse()[i];
         }
+        btnSort.src = `img/btn-down.png`
         flagSort = true;
     }
 };
@@ -95,10 +107,17 @@ function drop(e) {
         done.appendChild(draggable);
         if (inputs.children.length == 0) create();
     }
-   
 };
 
+function hoverEffectSortBtn() {
+    if (flagSort) btnSort.src = `img/btn-down-hover.png`
+    else btnSort.src = `img/btn-up-hover.png`
+};
 
+function hoverEffectSortBtnOut() {
+    if (flagSort) btnSort.src = `img/btn-down.png`
+    else btnSort.src = `img/btn-up.png`
+};
 
 
 
