@@ -19,8 +19,7 @@ btnSort.addEventListener('mouseover', hoverEffectSortBtn);
 btnSort.addEventListener('mouseout', hoverEffectSortBtnOut);
 
 function createInput() {
-    let arr = Array.from(inputItems)
-    (arr[arr.length - 1].value.trim() == '') ? flagTwo = false : flagTwo = true;
+    (Array.from(inputItems)[Array.from(inputItems).length - 1].value.trim() == '') ? flagTwo = false : flagTwo = true;
     if (flag < 5 && flagTwo) {
         flag++;
         id++;
@@ -30,7 +29,7 @@ function createInput() {
         let html = `<div class="popup">
                         <span class="popuptext show" id="myPopup"> List is full </span>
                     </div>`
-        arr[arr.length - 1].parentElement.insertAdjacentHTML("beforeend", html);
+        Array.from(inputItems)[Array.from(inputItems).length - 1].parentElement.insertAdjacentHTML("beforeend", html);
         setTimeout(() => {
             let popup = document.querySelector('.popup');
             popup.remove();
@@ -39,7 +38,7 @@ function createInput() {
         let html = `<div class="popup">
                         <span class="popuptext show" id="myPopup"> This field is empty </span>
                     </div>`
-        arr[arr.length - 1].parentElement.insertAdjacentHTML("beforeend", html);
+        Array.from(inputItems)[Array.from(inputItems).length - 1].parentElement.insertAdjacentHTML("beforeend", html);
         setTimeout(() => {
             let popup = document.querySelector('.popup');
             popup.remove();
@@ -60,12 +59,13 @@ function create() {
 
 function sort() {
     let dataBaza = [];
-    const arrInputValue =  Array.from(inputItems);
+    const arrInputValue = Array.from(inputItems);
     for (let i = 0; i < arrInputValue.length; i++) {
         if (arrInputValue[i].value.trim() != '') dataBaza.push(arrInputValue[i].value.trim())
-        else arrInputValue[i].parentElement.remove();
+        else (flag > 1) ? arrInputValue[i].parentElement.remove() : '';
     }
-    flag = dataBaza.length;
+    Array.from(inputItems).length == 0 ? create() : '';
+    flag = Array.from(inputItems).length;
     if (flagSort) {
         for (let i = 0; i < dataBaza.length; i++) {
             if (arrInputValue[i].value.trim() != '') arrInputValue[i].value = dataBaza.sort()[i];
@@ -82,6 +82,7 @@ function sort() {
 };
 
 function deleteInputFirst() {
+    console.log(flag);
     if (flag > 1) {
         this.parentElement.remove()
         flag--;
