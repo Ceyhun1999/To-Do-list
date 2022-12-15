@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
     padding: 0 20px;
     gap: 5px;
-    background: url('../img/bodyBg2.webp') center/cover;
+    background: url('../img/bodyBg2.png') center/cover;
 }
 .container {
     max-width: 340px;
@@ -187,7 +187,7 @@ input:focus {
     body { 
         flex-direction: row;
         gap: 200px;
-        background: url('../img/bodyBg1.jpg') center/cover;
+        background: url('../img/bodyBg1.png') center/cover;
     }
     .btn-add:hover .btn-add__left { transform: rotate(180deg) }
     .btn-add:hover div {
