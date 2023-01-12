@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,18 +15,23 @@
                     <img class="btn-sort__down" src="img/btn-down.png" alt="Button sort">
                 </div>
                 <div class="inputs" id="inputs">
-                    <div class="inputs__item draggable" draggable="true" ondragend="dragEnd(event)" ondragstart="drag(event)">
+                    <div class="inputs__item draggable" draggable="true" ondragend="dragEnd(event)"
+                        ondragstart="drag(event)">
+                        <div class="btn-done">
+                            <i class="fas fa-plus-square"></i>
+                        </div>
                         <div class="btn-delete cross">🞡</div>
                         <input type="text" />
                     </div>
                 </div>
                 <div class="btn-add">
                     <div class="btn-add__left">+</div>
-                    <div class="btn-add__right">Добавить</div>
+                    <div class="btn-add__right">Add</div>
                 </div>
             </div>
         </div>
-        <div id="done" ondrop="drop()" ondragover="allowDrop(event)" ></div>
+        <div id="done" ondrop="drop()" ondragover="allowDrop(event)"></div>
+        <script src="https://kit.fontawesome.com/d4a8753bf6.js" crossorigin="anonymous"></script>
         <script src="js/javascript.js"></script>
     </body>
 </html>

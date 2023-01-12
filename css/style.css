@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
 :root {
     --grey: #c4c4c4;
     --pink: pink;
     --pink2: #fca5b3;
     --blue: #b6f3f0;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -15,6 +17,7 @@ body {
     gap: 5px;
     background: url('../img/bodyBg22.png') center/cover;
 }
+
 .container {
     max-width: 340px;
     width: 100%;
@@ -23,7 +26,11 @@ body {
     border-radius: 10px;
     background: var(--blue);
 }
-.container__content { padding: 15px 20px 20px 20px }
+
+.container__content {
+    padding: 15px 20px 20px 20px
+}
+
 .title {
     font: 900 2em 'Roboto', sans-serif;
     text-align: center;
@@ -31,18 +38,21 @@ body {
     padding: 15px 0;
     color: rgb(248, 153, 169);
 }
+
 .inputs {
     border: none;
     margin-bottom: 20px;
     border-radius: 10px;
 }
-.inputs__item { 
+
+.inputs__item {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
 }
+
 input {
     width: 100%;
     border-radius: 10px;
@@ -52,11 +62,14 @@ input {
     font: 900 14px 'Roboto', sans-serif;
     color: rgb(255, 156, 156);
 }
-input:focus { 
+
+input:focus {
     outline: none;
     border: 3px solid var(--pink);
 }
-.btn-delete, .btn2-delete {
+
+.btn-delete,
+.btn2-delete {
     border: 1px solid var(--grey);
     border-radius: 50%;
     width: 23px;
@@ -66,26 +79,30 @@ input:focus {
     align-items: center;
     color: var(--grey);
     position: absolute;
-    right: 30px;
+    right: 15px;
     transform: rotate(45deg);
     cursor: pointer;
     background: #fff;
 }
+
 .btn-sort {
     display: flex;
     justify-content: end;
     margin-bottom: 10px;
 }
+
 .btn-sort img {
     cursor: pointer;
     display: inline;
 }
+
 .btn-add {
     position: relative;
     cursor: pointer;
     width: 150px;
     margin: auto;
 }
+
 .btn-add__left {
     font-size: 25px;
     font-weight: bold;
@@ -101,6 +118,7 @@ input:focus {
     border: 1px solid var(--pink);
     transition: .5s;
 }
+
 .btn-add__right {
     background: var(--pink2);
     display: flex;
@@ -114,6 +132,7 @@ input:focus {
     border: 1px solid var(--pink);
     transition: .5s;
 }
+
 #done {
     width: 350px;
     padding: 10px;
@@ -126,9 +145,19 @@ input:focus {
     background: pink;
     position: relative;
 }
-#done > div { margin-bottom: 10px }
-#done input { background: #a4fa99 }
-.cross { transition: .5s }
+
+#done>div {
+    margin-bottom: 10px
+}
+
+#done input {
+    background: #a4fa99
+}
+
+.cross {
+    transition: .5s
+}
+
 .popup {
     position: absolute;
     display: inline-block;
@@ -139,6 +168,7 @@ input:focus {
     user-select: none;
     top: 10px;
 }
+
 .popup .popuptext {
     visibility: hidden;
     width: 160px;
@@ -153,6 +183,7 @@ input:focus {
     left: 50%;
     margin-left: -80px;
 }
+
 .popup .popuptext::after {
     content: "";
     position: absolute;
@@ -163,41 +194,78 @@ input:focus {
     border-style: solid;
     border-color: red transparent transparent transparent;
 }
+
 .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
 }
+
 @-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
+
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
-.popup { 
+
+.popup {
     left: 50%;
     transform: translate(-50%, 0);
     top: -5px;
 }
 
+.btn-done {
+    display: inline-block;
+    font-size: 1.6em;
+    border: 0;
+    color: #e88b9a;
+    margin-right: 10px;
+    background: transparent;
+}
+
+#done .inputs__item .btn-done {
+    display: none;
+}
+
+
 @media only screen and (min-width: 768px) {
-    
-    body { 
+
+    body {
         flex-direction: row;
         gap: 200px;
         background: url('../img/bodyBg1.png') center/cover;
     }
-    .btn-add:hover .btn-add__left { transform: rotate(180deg) }
+
+    .btn-add:hover .btn-add__left {
+        transform: rotate(180deg)
+    }
+
     .btn-add:hover div {
         background: #fff;
         border: 1px solid var(--pink2);
         color: var(--pink2);
     }
-    .cross:hover { 
+
+    .cross:hover {
         transform: rotate(180deg);
         background: var(--pink);
         color: #fff;
+    }
+
+    .btn-done {
+        display: none;
     }
 }
