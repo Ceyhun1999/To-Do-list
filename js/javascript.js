@@ -8,6 +8,8 @@ const done = document.getElementById("done");
 const draggables = document.getElementsByClassName("draggable");
 const doneHeight = done.offsetHeight;
 const btnDones = document.getElementsByClassName("btn-done");
+const hintMobile = document.querySelector(".hint-mobile");
+const hintDesktop = document.querySelector(".hint-desktop");
 
 let flag = 1,
     flagTwo = true,
@@ -22,7 +24,9 @@ btnSort.addEventListener("mouseout", hoverEffectSortBtnOut);
 Array.from(btnDones).forEach((item) => item.addEventListener("click", dragMobile));
 
 function createInput() {
-    Array.from(inputItems)[Array.from(inputItems).length - 1].value.trim() == "" ? (flagTwo = false) : (flagTwo = true);
+    Array.from(inputItems)[Array.from(inputItems).length - 1].value.trim() == ""
+        ? (flagTwo = false)
+        : (flagTwo = true);
     if (flag < 5 && flagTwo) {
         flag++;
         id++;
@@ -32,7 +36,10 @@ function createInput() {
         let html = `<div class="popup">
                         <span class="popuptext show" id="myPopup"> List is full </span>
                     </div>`;
-        Array.from(inputItems)[Array.from(inputItems).length - 1].parentElement.insertAdjacentHTML("beforeend", html);
+        Array.from(inputItems)[Array.from(inputItems).length - 1].parentElement.insertAdjacentHTML(
+            "beforeend",
+            html
+        );
         setTimeout(() => {
             let popup = document.querySelector(".popup");
             popup.remove();
@@ -41,7 +48,10 @@ function createInput() {
         let html = `<div class="popup">
                         <span class="popuptext show" id="myPopup"> This field is empty </span>
                     </div>`;
-        Array.from(inputItems)[Array.from(inputItems).length - 1].parentElement.insertAdjacentHTML("beforeend", html);
+        Array.from(inputItems)[Array.from(inputItems).length - 1].parentElement.insertAdjacentHTML(
+            "beforeend",
+            html
+        );
         setTimeout(() => {
             let popup = document.querySelector(".popup");
             popup.remove();
@@ -123,6 +133,8 @@ function drop(e) {
         btn.classList.add("btn2-delete");
         btn.addEventListener("click", deleteInputSecond);
         done.appendChild(draggable);
+        hintMobile.remove();
+        hintDesktop.remove();
         if (inputs.children.length == 0) create();
     } else if (done.children.length == 10) {
         let html = `<div class="popup">
